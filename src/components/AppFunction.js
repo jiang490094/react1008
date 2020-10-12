@@ -1,7 +1,7 @@
 // 導入其它的模組
 import React, { useState } from 'react'
 
-function App() {
+function AppFunction() {
   // 呼叫useState勾子，設定初始化值為0，total跟setTotal為解構賦值，各接一個值
   //解構賦值是減寫法，專為物件跟陣列設計ex.(原本)const arr = [1,2].let a = arr[0].let b = arr[1]。(解構賦值版)const [a,b]=arr
   // 回傳一組getter(獲取值)和setter(設定值)陣列
@@ -21,4 +21,4 @@ function App() {
 }
 
 // 輸出元件(函式)
-export default App
+export default AppFunction
