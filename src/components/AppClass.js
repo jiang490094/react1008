@@ -3,7 +3,7 @@ import React from 'react'
 
 // 繼承類別
 class AppClass extends React.Component {
-  // 建構式
+  // 建構式(類別初始化的第一步)
   constructor() {
     // 建構式的第一行需要使用super呼叫父母類別的建構式
     super()
