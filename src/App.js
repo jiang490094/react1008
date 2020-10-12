@@ -1,16 +1,21 @@
 // 導入其它的模組
-import React from 'react'
+import React, { useState } from 'react'
 
-// 導入要使用的元件程式，注意路徑要正確，不需要加副檔名
-import AppClass from './components/AppClass'
-import AppFunction from './components/AppFunction'
+import MyButtonOne from './components/MyButtonOne'
+import MyButtonTwo from './components/MyButtonTwo'
 
-function App() {
+function App(props) {
+  const [show, setShow] = useState(true)
+
   return (
     <>
-      {/* 使用類似HTML標記的方式來放置元件要呈現(渲染)的位置 */}
-      <AppClass />
-      <AppFunction />
+      {/* <h1>0</h1> */}
+      <MyButtonOne title="復活吧~" clickMethod={() => setShow(true)} />
+      {show ? (
+        <MyButtonTwo title="我不要活了" clickMethod={() => setShow(false)} />
+      ) : (
+        ''
+      )}
     </>
   )
 }
