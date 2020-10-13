@@ -13,6 +13,17 @@ class AppClassPropsInit extends React.Component {
     }
   }
 
+  // static getDerivedStateFromProps(props, state) {
+  //   // Any time the current user changes,
+  //   // Reset any parts of state that are tied to that user.
+  //   if (props.initValue !== state.initTotal) {
+  //     return {
+  //       initTotal: props.initValue,
+  //     }
+  //   }
+  //   return null
+  // }
+
   // render的回傳值即為最後呈現在網頁上的元素
   render() {
     console.log(this.props)

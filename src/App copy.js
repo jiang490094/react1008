@@ -1,6 +1,5 @@
 // 導入其它的模組
 import React, { useState } from 'react'
-import MoneyInput from './components/MoneyInput'
 
 function App(props) {
   const [twd, setTwd] = useState(0)
@@ -12,26 +11,7 @@ function App(props) {
 
   return (
     <>
-      {/* 寫一個子女元件重覆使用 */}
-      <MoneyInput
-        title="新台幣"
-        money={twd}
-        setMoney={(value) => {
-          setTwd(value)
-          setUsd(twd2Usd(value))
-        }}
-      />
-      <br />
-      <MoneyInput
-        title="美金"
-        money={usd}
-        setMoney={(value) => {
-          setUsd(value)
-          setTwd(usd2Twd(value))
-        }}
-      />
-
-      {/* 新台幣：
+      新台幣：
       <input
         type="text"
         value={twd}
@@ -55,7 +35,6 @@ function App(props) {
           setTwd(usd2Twd(newUsd))
         }}
       />
-      <hr /> */}
     </>
   )
 }
