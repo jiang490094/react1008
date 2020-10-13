@@ -404,6 +404,7 @@ const data = {
   },
 }
 
+// getOwnPropertyNames=挑名字。(v, i, array)和(data[array[i]])為二維陣列
 export const countries = Object.getOwnPropertyNames(data)
 export const townships = countries.map((v, i, array) =>
   Object.getOwnPropertyNames(data[array[i]])
