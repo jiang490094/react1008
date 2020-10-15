@@ -1,0 +1,43 @@
+// 導入react函式庫
+import React from 'react'
+import PropTypes from 'prop-types'
+
+// 繼承類別
+class AppClass extends React.Component {
+  // 建構式
+  constructor(props) {
+    super(props)
+    this.state = {
+      total: props.value,
+    }
+  }
+
+  // render的回傳值即為最後呈現在網頁上的元素
+  render() {
+    console.log(this.props)
+    return (
+      <>
+        <h1>{this.props.title}</h1>
+        <h1>{this.state.total}</h1>
+        <button onClick={() => this.setState({ total: this.state.total + 1 })}>
+          +1
+        </button>
+        <button onClick={() => this.setState({ total: this.state.total - 1 })}>
+          -1
+        </button>
+      </>
+    )
+  }
+}
+
+AppClass.propTypes = {
+  initValue: PropTypes.number,
+  title: PropTypes.string,
+}
+
+AppClass.defaultProps = {
+  initValue: 0,
+  title: '沒標題',
+}
+
+export default AppClass
