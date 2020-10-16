@@ -1,53 +1,21 @@
-// 導入其它的模組
-import React, { useState } from 'react'
-import Clock from './components/Clock'
+import React, { useState, useEffect } from 'react'
+import MyNavbar from './components/MyNavbar'
+import MyFooter from './components/MyFooter'
+import AgeCheck from './components/AgeCheck'
+import TodoApp from './components/TodoApp'
 
-function App(props) {
+function App() {
   return (
     <>
-      <Clock />
-      <div class="container">
-        <div class="row">
-          <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-              />
-              <small id="emailHelp" class="form-text text-muted">
-                We'll never share your email with anyone else.
-              </small>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-              />
-            </div>
-            <div class="form-group form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-              <label class="form-check-label" for="exampleCheck1">
-                Check me out
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary">
-              Submit
-            </button>
-          </form>
+      <MyNavbar />
+      <main className="flex-shrink-0">
+        <div className="container">
+          <TodoApp />
         </div>
-      </div>
+      </main>
+      <MyFooter />
     </>
   )
 }
 
-// 輸出元件(函式)
 export default App
