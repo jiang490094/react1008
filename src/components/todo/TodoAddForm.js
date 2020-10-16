@@ -18,6 +18,7 @@ function TodoAddForm(props) {
               id: +new Date(),
               text: e.target.value,
               completed: false,
+              edited: false,
             }
 
             // 建立新的陣列(合併原本的todos陣列中的值)
