@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Navbar, Nav } from 'react-bootstrap'
+import {
+  Navbar,
+  Nav,
+  Form,
+  FormControl,
+  Button,
+  NavDropdown,
+} from 'react-bootstrap'
 
 // 選單連結要使用NavLink取代Link
 import { NavLink } from 'react-router-dom'
@@ -23,8 +30,14 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="/" exact>
               首頁
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/counter">
-              計數器
+            <Nav.Link as={NavLink} to="/login">
+              登入
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/register">
+              註冊
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/profile">
+              會員資料
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

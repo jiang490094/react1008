@@ -14,9 +14,6 @@ function Breadcrumb(props) {
     case '/about':
       path = '關於我們'
       break
-    case '/member':
-      path = '會員修改'
-      break
     default:
       path = ''
   }
