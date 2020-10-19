@@ -36,6 +36,12 @@ function MyNavbar(props) {
             <Nav.Link as={NavLink} to="/product">
               產品
             </Nav.Link>
+            <Nav.Link as={NavLink} to="/login">
+              登入/登出
+            </Nav.Link>
+            <Nav.Link as={NavLink} to="/register">
+              註冊
+            </Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link as={NavLink} to="/about">
