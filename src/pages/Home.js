@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Link, Switch } from 'react-router-dom'
+import { Link, Switch, withRouter } from 'react-router-dom'
 
 function Home(props) {
+  console.log(props)
   return (
     <>
-      <h1>Hello</h1>
+      <h1>Home</h1>
       <a href="/todo">a link to todopage</a>
       <hr />
       <Link to="/todo">Link component to todopage</Link>
@@ -12,4 +13,4 @@ function Home(props) {
   )
 }
 
-export default Home
+export default withRouter(Home)

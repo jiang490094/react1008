@@ -1,0 +1,12 @@
+$primary:        purple ;
+$secondary:     yellow;
+$white:    #f1f1f1;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+.a1 {
+    color:blue;
+    font-size: 18px;
+}
