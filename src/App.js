@@ -1,31 +1,26 @@
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-import Menu from './components/Menu'
-import UserList from './pages/UserList'
-import UserEdit from './pages/UserEdit'
-import UserAdd from './pages/UserAdd'
+import MyNavbar from './components/MyNavbar'
+import MyFooter from './components/MyFooter'
+import MainContent from './components/MainContent'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+
+import Counter from './pages/Counter'
 
 function App() {
   return (
     <Router>
       <>
-        <div className="container">
-          <Menu />
-
+        <MyNavbar />
+        <MainContent>
           <Switch>
             {/* 注意：要加上網址參數 */}
-            <Route exact path="/user-edit/:userid?">
-              <UserEdit />
-            </Route>
-            <Route exact path="/user-add">
-              <UserAdd />
-            </Route>
             <Route exact path="/">
-              <UserList />
+              <Counter />
             </Route>
           </Switch>
-        </div>
+        </MainContent>
+        <MyFooter />
       </>
     </Router>
   )

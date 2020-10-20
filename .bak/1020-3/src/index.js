@@ -4,9 +4,6 @@ import './index.scss'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
-// 第一步：匯入createStore, combineReducers API
-import { createStore, combineReducers } from 'redux'
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

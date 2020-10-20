@@ -21,10 +21,10 @@ function MyNavbar(props) {
             {/* 把Nav.Link作為NavLink來使用 */}
             {/* 一定要加上exact，不然首頁會一直點亮(active) */}
             <Nav.Link as={NavLink} to="/" exact>
-              產品列表
+              計數器
             </Nav.Link>
             <Nav.Link as={NavLink} to="/cart">
-              購物車
+              沒用的項目
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
