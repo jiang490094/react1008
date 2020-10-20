@@ -7,6 +7,9 @@ import * as serviceWorker from './serviceWorker'
 // 第一步：匯入createStore, combineReducers API
 import { createStore, combineReducers } from 'redux'
 
+// 匯入綁定react與redux用的最上層元件
+import { Provider } from 'react-redux'
+
 // 第二步：寫出reducer
 // action = { type: 'ADD_VALUE', value: 1 }
 // action = { type: 'MINUS_VALUE', value: 1 }
@@ -36,7 +39,10 @@ const store = createStore(
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* 最上層的react與redux綁定用的元件，屬性即為上面建立的store */}
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )

@@ -1,13 +1,26 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 function Counter(props) {
+  console.log(props)
+
   return (
     <>
-      <h1>0</h1>
-      <button>+1</button>
-      <button>-1</button>
+      <h1>{props.total}</h1>
+      <button onClick={() => props.dispatch({ type: 'ADD_VALUE', value: 1 })}>
+        +1
+      </button>
+      <button onClick={() => props.dispatch({ type: 'MINUS_VALUE', value: 1 })}>
+        -1
+      </button>
     </>
   )
 }
 
-export default Counter
+const mapStateToProps = (store) => {
+  return { total: store.counter }
+}
+
+const mapDispatchToProps = null
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)
