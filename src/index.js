@@ -5,7 +5,10 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 
 // 第一步：匯入createStore, combineReducers API
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
+
+// 導入redux-thunk中介軟體
+import thunk from 'redux-thunk'
 
 // 匯入綁定react與redux用的最上層元件
 import { Provider } from 'react-redux'
@@ -14,9 +17,17 @@ import { Provider } from 'react-redux'
 import { rootReducer } from './reducers'
 
 // 第三步：由rootReducer建立store
+// const store = createStore(
+//   rootReducer /* preloadedState, */,
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// )
+
+// 在建立store時要加入中介軟體，為了要使用devtools
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
 const store = createStore(
-  rootReducer /* preloadedState, */,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  rootReducer,
+  /* preloadedState, */ composeEnhancers(applyMiddleware(thunk))
 )
 
 ReactDOM.render(
